@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Breast Cancer Predictor</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        input { margin: 8px 0; padding: 8px; width: 100%; }
+        .container { max-width: 400px; margin: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Breast Cancer Prediction</h2>
+        <form action="/predict" method="post">
+            <label>Radius Mean:</label>
+            <input type="number" name="radius_mean" step="0.01" required>
+
+            <label>Texture Mean:</label>
+            <input type="number" name="texture_mean" step="0.01" required>
+
+            <label>Perimeter Mean:</label>
+            <input type="number" name="perimeter_mean" step="0.01" required>
+
+            <label>Area Mean:</label>
+            <input type="number" name="area_mean" step="0.01" required>
+
+            <label>Smoothness Mean:</label>
+            <input type="number" name="smoothness_mean" step="0.0001" required>
+
+            <input type="submit" value="Predict">
+        </form>
+
+        <h3>{{ prediction_text }}</h3>
+    </div>
+</body>
+</html>
